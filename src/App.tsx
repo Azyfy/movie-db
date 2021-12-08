@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
 import { useEffect } from "react"
-import { getTopRated } from "./services/moviedb"
+import { useSelector, useDispatch } from "react-redux"
+import { initializeTopRated } from "./store/reducers"
 
 function App() {
-  
+  const topRated = useSelector( (state:any) => state.topRated)
+  const dispatch = useDispatch()
+
   useEffect( () => {
-    console.log(getTopRated())
-  }, [])
+    dispatch(initializeTopRated())
+  }, [dispatch])
+
+  console.log(topRated)
 
   return (
     <div className="App">
