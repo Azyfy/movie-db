@@ -1,0 +1,82 @@
+//  The file is mainly here to list all APIs for use
+//  To send the requests rest client extension for VSCode is required
+//  <variables> needs to be replaced
+
+// CONFIGURATION
+GET https://api.themoviedb.org/3/configuration?api_key=<KEY>
+###
+
+// TOP RATED
+GET https://api.themoviedb.org/3/movie/top_rated?api_key=<KEY>&language=en-US&page=1
+###
+GET https://api.themoviedb.org/3/tv/top_rated?api_key=<KEY>&language=en-US&page=1
+
+// SEARCH
+###
+GET https://api.themoviedb.org/3/search/movie?api_key=<KEY>&query=the+avengers
+
+// IMAGE
+###
+GET https://image.tmdb.org/t/p/w500/<IMG>
+
+// DETAILS
+###
+GET https://api.themoviedb.org/3/movie/<movie_id>?api_key=<KEY>&language=en-US
+
+// GENRE
+###
+GET https://api.themoviedb.org/3/genre/movie/list?api_key=<KEY>&language=en-US
+
+
+LOGOS
+https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg
+
+https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg
+
+https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg
+
+https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg
+
+https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg
+
+APPEND TO DETAILS API FOR VIDEO
+&append_to_response=videos
+
+SIZES
+
+"backdrop_sizes": [
+  "w300",
+  "w780",
+  "w1280",
+  "original"
+],
+"logo_sizes": [
+  "w45",
+  "w92",
+  "w154",
+  "w185",
+  "w300",
+  "w500",
+  "original"
+],
+"poster_sizes": [
+  "w92",
+  "w154",
+  "w185",
+  "w342",
+  "w500",
+  "w780",
+  "original"
+],
+"profile_sizes": [
+  "w45",
+  "w185",
+  "h632",
+  "original"
+],
+"still_sizes": [
+  "w92",
+  "w185",
+  "w300",
+  "original"
+]
