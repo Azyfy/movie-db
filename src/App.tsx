@@ -5,6 +5,12 @@ import { useSelector, useDispatch } from "react-redux"
 import { initializeTopRated } from "./store/reducers"
 import Loader from "./components/Loader"
 import Titles from "./components/Titles"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 
 function App() {
   const topRated = useSelector( (state:any) => state.topRated)
@@ -26,9 +32,13 @@ function App() {
     <div className="App">
       <h1> Movie and TV shows DB </h1>
 
-      <Titles titles={topRated.topMovies} />
-      <Titles titles={topRated.topShows} />
-      
+      <Router>
+        <Routes>
+          <Route  path="/" element={ <Navigate to="/top-shows" /> } />
+          <Route  path="/top-shows" element={ <Titles titles={topRated.topShows} /> } />
+          <Route  path="/top-movies" element={ <Titles titles={topRated.topMovies} /> } />
+        </Routes>
+      </Router>
 
     </div>
   );
