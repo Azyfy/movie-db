@@ -1,0 +1,82 @@
+Frontend Developer assignment
+
+The purpose of this assignment is to have candidates create a small web app so the Rubicon Team can have a better understanding of, and insight into the knowledge and the skill a candidate possesses. This makes it easier for you (and for us) to stand out from the crowd and present yourself in the best way possible.
+
+NOTE: You can do the assignment either in React or Angular - the choice is yours
+Assignment description:
+
+The app needs to have the functionalities of displaying the top 10 rated TV shows and the top 10 movies, a search function for both, and a detailed view for individual items.
+
+Please use TheMovieDB API found at https://developers.themoviedb.org/3 to implement this.
+
+To help you with the UX/UI for this web app we made some mocks available at https://www.figma.com/file/pzTXHR7vrDdUwZnqzLxMx8/Web-Mock
+App requirements:
+
+When the app loads, the TV SHOWS tab should be selected.
+Clicking on a tab loads the top 10 MOVIES/TV SHOWS depending on the selected tab.
+
+The search field should be live and react to any change in the input field.
+The search should fire a request on the search endpoint from TMDB and not filter the top 10 results.
+The search is performed only when there are 3 or more characters in the search bar and it should be triggered only one second after the user has stopped typing.
+When there are less than 3 characters in the search bar, the content should revert back to the top 10 MOVIES/TV SHOWS.
+When the search is performed, results should appear under the search box.
+Switching between tabs while searching should trigger the search again with the same search term for the selected tab and update the results.
+
+When the user clicks on a specific MOVIE/TV SHOW, he is taken to the details view.
+
+
+
+
+The Detailed View of the Movie/TV Show should show the cover image on top and in the case of Movies/TV Shows which have a trailer should show the trailer video instead of the cover image. Below the image/trailer some basic information regarding the selected Movie/TV Show should be shown.
+
+The Back Button should return the user back to where he was and with the same state before clicking to see more information about a Movie/TV Show.
+(Meaning that the correct tab should be selected and if the user came from search - the search result with the search term should be there. 
+NOTE no need to save the scroll position) 
+Technical requirements for React:
+React version 16.8 or later should be used
+React is focused more on the UI so you will need something to save and consume state
+React Context, MobX, Redux might help with that
+Use React Router
+Use Typescript
+Showcase correct usage of:
+Functional and Stateful Components
+Working with global state
+React Hooks
+Typescript
+Don’t use Bootstrap or similar CSS frameworks, showcase us proper HTML structure and CSS layout skills
+
+Technical requirements for Angular:
+Angular version 10 or later should be used
+Use Typescript
+Showcase correct usage of:
+Directives and Modules
+Components
+Services and Dependency Injection
+Typescript
+Don’t use Angular Material or similar CSS frameworks/style libraries, showcase us proper HTML structure and CSS layout skills
+
+You will get bonus points if you:
+Use ESLint or any other form of linting/static analysis to have nice and clean code
+Use a clean and logical app architecture
+Write some tests for your app (maybe use Enzyme, Karma, or Testing Library)
+Make the app responsive
+Style the app (maybe add some color, animations, borders - show us you have an eye for design)
+General notes regarding the assignment:
+The point of the exercise is to show us your style and approach to coding and problem solving
+Follow the motto: "Make It Work Make It Right Make It Fast"
+You don't have to do everything yourself. There are many boilerplates out there to set up the groundwork so you can just do the main app logic. Consider using Create React App
+Feel free to show off your architectural software pattern knowledge
+Don't forget to use the final product yourself to test it and be sure it's working as it should
+Delivery notes:
+We have to run it somehow so please set up a command that builds it and serves it so we can check it out (write the information in the README.md)
+We only accept links to public Git repositories which we can checkout. Please do not send archived files.
+The deadline to submit your app is 7 days after accepting the assignment
+If you think there is something more detailed you need to tell us please put it all into the README.md and we will check it out there
+Important:
+Please respond to this email by accepting or declining the assignment.
+Please keep all further correspondence exclusively in this email thread and check the spam every couple of days if you don't hear from us
+If you have any questions let us know via email
+
+Have fun!
+
+RUBICON Team
