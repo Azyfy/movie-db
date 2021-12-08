@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { initializeTopRated } from "./store/reducers"
 import Loader from "./components/Loader"
+import Titles from "./components/Titles"
 
 function App() {
   const topRated = useSelector( (state:any) => state.topRated)
@@ -24,6 +25,11 @@ function App() {
   return (
     <div className="App">
       <h1> Movie and TV shows DB </h1>
+
+      <Titles titles={topRated.topMovies} />
+      <Titles titles={topRated.topShows} />
+      
+
     </div>
   );
 }
