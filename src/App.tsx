@@ -3,15 +3,19 @@ import './App.css';
 import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { initializeTopRated } from "./store/reducers"
-import Loader from "./components/Loader"
-import Titles from "./components/Titles"
-import NoMatch from "./components/NoMatch"
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate
-} from "react-router-dom";
+} from "react-router-dom"
+
+import Loader from "./components/Loader"
+import Titles from "./components/Titles"
+import NoMatch from "./components/NoMatch"
+import Header from "./components/Header"
+import NavMenu from "./components/NavMenu"
+
 
 function App() {
   const topRated = useSelector( (state:any) => state.topRated)
@@ -31,9 +35,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1> Movie and TV shows DB </h1>
+      
+      <Header />
 
       <Router>
+
+        <NavMenu />
+
         <Routes>
           <Route  path="/" element={ <Navigate to="/top-shows" /> } />
           <Route  path="/top-shows" element={ <Titles titles={topRated.topShows} /> } />
