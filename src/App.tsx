@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { initializeTopRated } from "./store/reducers"
 import Loader from "./components/Loader"
 import Titles from "./components/Titles"
+import NoMatch from "./components/NoMatch"
 import {
   BrowserRouter as Router,
   Routes,
@@ -37,6 +38,8 @@ function App() {
           <Route  path="/" element={ <Navigate to="/top-shows" /> } />
           <Route  path="/top-shows" element={ <Titles titles={topRated.topShows} /> } />
           <Route  path="/top-movies" element={ <Titles titles={topRated.topMovies} /> } />
+
+          <Route path="*" element={ <NoMatch /> } />
         </Routes>
       </Router>
 
