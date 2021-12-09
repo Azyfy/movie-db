@@ -66,5 +66,20 @@ export const getTitle = async (id:number|string|undefined, type:string) => {
     catch (err) {
         console.log(err)
     }
+}
+
+export const getSearchedTitle = async (type:string, searchTerm: string) => {
+
+    try {
+        const searchResults = await axios.get(`https://api.themoviedb.org/3/search/${type}?api_key=38ef25d4ae2b140a4f5b6f9c04144a95&query=${searchTerm}`)
+        
+        const searchedTitles = searchResults.data.results
+        console.log("TITLE", searchedTitles)
+
+        return searchedTitles
+    }
+    catch (err) {
+        console.log(err)
+    }
 
 }
