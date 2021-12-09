@@ -37,7 +37,7 @@ const SingleTitle = ({ type }: { type:string }) => {
                 <h3> { (title as any).name || (title as any).title } </h3>
                 <p> { (title as any).release_date || (title as any).first_air_date } </p>
                 
-                <p> { title.overview.slice(0, 100) } . . . </p>
+                <p> { title.overview } </p>
                 <span> { title.vote_average } </span>
             </div>
         </div>
