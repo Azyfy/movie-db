@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { initializeTopRated } from "./store/reducers"
+import { initializeTopRated, initializeGenres } from "./store/reducers"
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,15 +19,18 @@ import NavMenu from "./components/NavMenu"
 
 function App() {
   const topRated = useSelector( (state:any) => state.topRated)
+  const genres = useSelector( (state:any) => state.genres)
   const dispatch = useDispatch()
 
   useEffect( () => {
     dispatch(initializeTopRated())
+    dispatch(initializeGenres())
   }, [dispatch])
 
-  console.log(topRated)
+  console.log( "TR", topRated)
+  console.log( "G", genres)
 
-  if(!topRated) {
+  if(!topRated || !genres) {
     return (
       <Loader />
     )
@@ -44,8 +47,8 @@ function App() {
 
         <Routes>
           <Route  path="/" element={ <Navigate to="/top-shows" /> } />
-          <Route  path="/top-shows" element={ <Titles titles={topRated.topShows} /> } />
-          <Route  path="/top-movies" element={ <Titles titles={topRated.topMovies} /> } />
+          <Route  path="/top-shows" element={ <Titles titles={topRated.topShows} genres={genres.movieGenres} /> } />
+          <Route  path="/top-movies" element={ <Titles titles={topRated.topMovies} genres={genres.showGenres} /> } />
 
           <Route path="*" element={ <NoMatch /> } />
         </Routes>
