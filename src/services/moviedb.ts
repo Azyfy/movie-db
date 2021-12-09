@@ -1,19 +1,19 @@
 import axios from "axios"
 
 function getTopRatedMovies() {
-    return axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`);
+    return axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
   }
 
 function getTopRatedShows() {
-    return axios.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`);
+    return axios.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
 }
 
 function getMovieGenres() {
-    return axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
+    return axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
 }
 
 function getShowGenres() {
-    return axios.get(`https://api.themoviedb.org/3/genre/tv/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
+    return axios.get(`https://api.themoviedb.org/3/genre/tv/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
 }
 
 export const getTopRated = async () => {
@@ -41,6 +41,20 @@ export const getGenres = async () => {
             movieGenres: movieGenres.data.genres,
             showGenres: showGenres.data.genres
         }
+    }
+    catch (err) {
+        console.log(err)
+    }
+
+}
+
+export const getTitle = async (id:number|string|undefined, type:string) => {
+
+    try {
+        const title = await axios.get(`https://api.themoviedb.org/3/${type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=videos`)
+
+        console.log("TITLE", title.data)
+        return title.data
     }
     catch (err) {
         console.log(err)
