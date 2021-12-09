@@ -1,6 +1,7 @@
 import { getTopRated, getGenres } from "../../services/moviedb"
+import { state, genre, movieTitles, showTitles } from "../../types"
 
-const reducer = ( state = {}  , action:any) => {
+const reducer = ( state: state = {}, action: { type: string; data: any }) => {
   switch (action.type) {
     case "INITIALIZE_TOP_RATED":
       const topRated = action.data
@@ -22,7 +23,7 @@ const reducer = ( state = {}  , action:any) => {
 }
 
 export const initializeTopRated = () => {
-  return async (dispatch:any) => {
+  return async (dispatch: (arg0: { type: string; data: { topMovies: [movieTitles]; topShows: [showTitles] } | undefined }) => void) => {
     const topRated = await getTopRated()
     dispatch({
       type: "INITIALIZE_TOP_RATED",
@@ -32,7 +33,7 @@ export const initializeTopRated = () => {
 }
 
 export const initializeGenres = () => {
-  return async (dispatch:any) => {
+  return async (dispatch: (arg0: { type: string; data: { movieGenres: [genre]; showGenres: [genre] } | undefined }) => void) => {
     const genres = await getGenres()
     dispatch({
       type: "INITIALIZE_GENRES",

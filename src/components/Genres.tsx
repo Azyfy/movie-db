@@ -1,12 +1,13 @@
+import { genre } from "../types"
 
+const Genres = ({ titleGenres, genres }: { titleGenres: [id: number]; genres: [genre] } ) => {
 
-const Genres = ({ titleGenres, genres }: { titleGenres: any; genres: any } ) => {
-    const filteredGenre = genres.filter( (genre:any) => titleGenres.includes(genre.id) )
+    const filteredGenre = genres.filter( (genre) => titleGenres.includes(genre.id) )
 
     return (
         <div className="Genres" >
             {
-                filteredGenre.map( (genre:any) => {
+                filteredGenre.map( (genre) => {
                     return (
                         <span key={ genre.id } > { genre.name } </span>
                     )

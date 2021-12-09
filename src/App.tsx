@@ -15,12 +15,14 @@ import Titles from "./components/Titles"
 import NoMatch from "./components/NoMatch"
 import Header from "./components/Header"
 import NavMenu from "./components/NavMenu"
-import SingleTitle from './components/SingleTitle';
+import SingleTitle from './components/SingleTitle'
+
+import { topRated, genres } from "./types"
 
 
 function App() {
-  const topRated = useSelector( (state:any) => state.topRated)
-  const genres = useSelector( (state:any) => state.genres)
+  const topRated: topRated = useSelector( (state:any) => state.topRated)
+  const genres: genres = useSelector( (state:any) => state.genres)
   const dispatch = useDispatch()
 
   useEffect( () => {

@@ -1,5 +1,7 @@
 import axios from "axios"
 
+import { movieTitles, showTitles, genre } from "../types"
+
 function getTopRatedMovies() {
     return axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
   }
@@ -19,11 +21,14 @@ function getShowGenres() {
 export const getTopRated = async () => {
 
     try {
-        const [topMovies, topShows] = await Promise.all([ getTopRatedMovies(), getTopRatedShows() ]);
+        const [moviesResponse, showsResponse] = await Promise.all([ getTopRatedMovies(), getTopRatedShows() ]);
         
+        const topMovies: [movieTitles] = moviesResponse.data.results.splice(0, 10)
+        const topShows: [showTitles] = showsResponse.data.results.splice(0, 10)
+
         return {
-            topMovies: topMovies.data.results,
-            topShows: topShows.data.results
+            topMovies,
+            topShows
         }
     }
     catch (err) {
@@ -34,12 +39,14 @@ export const getTopRated = async () => {
 export const getGenres = async () => {
 
     try {
-        const [movieGenres, showGenres] = await Promise.all([ getMovieGenres(), getShowGenres()]);
+        const [movieGenresResult, showGenresResult] = await Promise.all([ getMovieGenres(), getShowGenres()]);
 
-        console.log(movieGenres)
+        const movieGenres: [genre] = movieGenresResult.data.genres
+        const showGenres: [genre] = showGenresResult.data.genres
+
         return {
-            movieGenres: movieGenres.data.genres,
-            showGenres: showGenres.data.genres
+            movieGenres,
+            showGenres
         }
     }
     catch (err) {
