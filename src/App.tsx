@@ -15,6 +15,7 @@ import Titles from "./components/Titles"
 import NoMatch from "./components/NoMatch"
 import Header from "./components/Header"
 import NavMenu from "./components/NavMenu"
+import SingleTitle from './components/SingleTitle';
 
 
 function App() {
@@ -47,8 +48,10 @@ function App() {
 
         <Routes>
           <Route  path="/" element={ <Navigate to="/top-shows" /> } />
-          <Route  path="/top-shows" element={ <Titles titles={topRated.topShows} genres={genres.movieGenres} /> } />
-          <Route  path="/top-movies" element={ <Titles titles={topRated.topMovies} genres={genres.showGenres} /> } />
+          <Route  path="/top-shows" element={ <Titles titles={topRated.topShows} genres={genres.movieGenres} currentPath="/top-shows" /> } />
+          <Route  path="/top-movies" element={ <Titles titles={topRated.topMovies} genres={genres.showGenres} currentPath="/top-movies" /> } />
+          <Route  path="/top-shows/:id" element={ <SingleTitle  type={"tv"} /> } />
+          <Route  path="/top-movies/:id" element={ <SingleTitle type={"movie"} /> } />
 
           <Route path="*" element={ <NoMatch /> } />
         </Routes>
