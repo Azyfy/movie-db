@@ -23,8 +23,9 @@ import { topRated, genres } from "./types"
 function App() {
   const topRated: topRated = useSelector( (state:any) => state.topRated)
   const genres: genres = useSelector( (state:any) => state.genres)
+  const currentSearchResults = useSelector( (state:any) => state.searchResults)
   const dispatch = useDispatch()
-
+console.log("SEARCH R", currentSearchResults)
   useEffect( () => {
     dispatch(initializeTopRated())
     dispatch(initializeGenres())
@@ -50,8 +51,8 @@ function App() {
 
         <Routes>
           <Route  path="/" element={ <Navigate to="/top-shows" /> } />
-          <Route  path="/top-shows" element={ <Titles titles={topRated.topShows} genres={genres.movieGenres} currentPath="/top-shows" /> } />
-          <Route  path="/top-movies" element={ <Titles titles={topRated.topMovies} genres={genres.showGenres} currentPath="/top-movies" /> } />
+          <Route  path="/top-shows" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topShows } genres={genres.movieGenres} currentPath="/top-shows" /> } />
+          <Route  path="/top-movies" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topMovies} genres={genres.showGenres} currentPath="/top-movies" /> } />
           <Route  path="/top-shows/:id" element={ <SingleTitle  type={"tv"} /> } />
           <Route  path="/top-movies/:id" element={ <SingleTitle type={"movie"} /> } />
 
