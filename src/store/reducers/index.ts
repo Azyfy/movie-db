@@ -1,4 +1,4 @@
-import { getTopRated, getGenres } from "../../services/moviedb"
+import { getTopRated, getGenres, getSearchedTitle } from "../../services/moviedb"
 import { state, genre, movieTitles, showTitles } from "../../types"
 
 const reducer = ( state: state = {}, action: { type: string; data: any }) => {
@@ -16,6 +16,20 @@ const reducer = ( state: state = {}, action: { type: string; data: any }) => {
       return {
         ...state,
         genres
+      }
+    case "INITIALIZE_SEARCH_RESULTS":
+      const searchResults = action.data
+
+      return {
+        ...state,
+        searchResults
+      }
+    case "CLEAR_SEARCH_RESULTS":
+      const clearResults = action.data
+
+      return {
+        ...state,
+        searchResults: clearResults 
       }
     default:
       return state
@@ -38,6 +52,26 @@ export const initializeGenres = () => {
     dispatch({
       type: "INITIALIZE_GENRES",
       data: genres
+    })
+  }
+}
+
+export const initializeSearchResults = (type:string, searchTerm: string) => {
+  return async (dispatch: (arg0: { type: string; data: any }) => void) => {
+    const searchResults = await getSearchedTitle(type, searchTerm)
+    dispatch({
+      type: "INITIALIZE_SEARCH_RESULTS",
+      data: searchResults
+    })
+  }
+}
+
+export const clearSearchResults = () => {
+  return async (dispatch: (arg0: { type: string; data: null }) => void) => {
+    const searchResults = null
+    dispatch({
+      type: "CLEAR_SEARCH_RESULTS",
+      data: searchResults
     })
   }
 }
