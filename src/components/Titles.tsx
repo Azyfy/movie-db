@@ -7,6 +7,13 @@ import { titlesProps } from "../types"
 
 const Titles = ( props: titlesProps  ) => {
  
+    if(props.titles.length < 1) {
+        return (
+            <div>
+                Nothing found
+            </div>
+        )
+    }
 
     return (
         <div className="Titles" >
