@@ -80,3 +80,8 @@ SIZES
   "w300",
   "original"
 ]
+
+Trailer URL
+Just add the Key in the respective URL:
+YouTube: https://www.youtube.com/watch?v=<object_key>
+Vimeo: https://vimeo.com/<object_key>
