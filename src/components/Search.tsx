@@ -21,7 +21,7 @@ const useTimedValue = (value: string, time: number) => {
     return timedValue
 }
 
-const Search = () => {
+const Search = ({ type }: { type:string }) => {
     const [ searchInput, setSearchInput ] = useState<string>("")
     const timedValue = useTimedValue(searchInput, 5000)
     const dispatch = useDispatch()
@@ -33,7 +33,7 @@ const Search = () => {
             let searchTerm = timedValue.split(" ").join("+")
 
             const fetch = async () => {    
-                dispatch(initializeSearchResults("movie", searchTerm))
+                dispatch(initializeSearchResults(type, searchTerm))
               }
             
               fetch()
@@ -43,7 +43,7 @@ const Search = () => {
             console.log("LOWER", timedValue)
             dispatch(clearSearchResults())
         }
-    }, [timedValue, dispatch])
+    }, [timedValue, dispatch, type])
    
     const searchForTitles = (e: ChangeEvent) => {
 

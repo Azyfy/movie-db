@@ -1,18 +1,26 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
+import { useState } from "react"
 
 import Search from "./Search"
 
 const NavMenu = () => {
+    let location = useLocation()
+    const [navPath, setNahPath] = useState( (location.pathname.slice(1, 6) === "top-m" ) ?
+                                                "movie" : "tv" )
+
+    const handleClick = (value: string) => {
+        setNahPath(value)
+    }
 
     return (
         <div className="NavMenu" >
 
             <nav>
-                <Link to="/top-movies"  > Movies </Link>
-                <Link to="/top-shows"  > TV Shows </Link>
+                <Link to="/top-movies" onClick={ () => handleClick("movie") }  > Movies </Link>
+                <Link to="/top-shows" onClick={ () => handleClick("tv") }  > TV Shows </Link>
             </nav>
 
-            <Search />
+            <Search type={navPath} />
             
         </div>
     )

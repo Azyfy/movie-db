@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 import { getTitle } from "../services/moviedb"
 import Loader from "./Loader"
@@ -8,6 +8,7 @@ import { movieTitles, showTitles } from "../types"
 
 const SingleTitle = ({ type }: { type:string }) => {
     const [ title, setTitle ] = useState<movieTitles | showTitles | null | undefined>(null)
+    const navigate = useNavigate()
     let params = useParams()
 
     useEffect( () => {
@@ -32,6 +33,7 @@ const SingleTitle = ({ type }: { type:string }) => {
 
     return (
         <div className="SingleTitle" >
+            <button onClick={ () => navigate(-1) } > Back </button>
             <div className="single-title-container" key={ title.id } >
                 <img src={`https://image.tmdb.org/t/p/w300/${title.backdrop_path || title.poster_path}`} alt={`image for ` + ((title as any).name || (title as any).title) }/>
                 <h3> { (title as any).name || (title as any).title } </h3>
