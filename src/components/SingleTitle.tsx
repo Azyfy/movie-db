@@ -7,7 +7,7 @@ import Loader from "./Loader"
 import { movieTitles, showTitles } from "../types"
 
 const SingleTitle = ({ type }: { type:string }) => {
-    const [ title, setTitle ] = useState<movieTitles | showTitles | null>(null)
+    const [ title, setTitle ] = useState<movieTitles | showTitles | null | undefined>(null)
     let params = useParams()
 
     useEffect( () => {

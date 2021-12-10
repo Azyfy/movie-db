@@ -17,13 +17,13 @@ import Header from "./components/Header"
 import NavMenu from "./components/NavMenu"
 import SingleTitle from './components/SingleTitle'
 
-import { topRated, genres } from "./types"
+import { state } from "./types"
 
 
 function App() {
-  const topRated: topRated = useSelector( (state:any) => state.topRated)
-  const genres: genres = useSelector( (state:any) => state.genres)
-  const currentSearchResults = useSelector( (state:any) => state.searchResults)
+  const topRated = useSelector( (state:state) => state.topRated)
+  const genres = useSelector( (state:state) => state.genres)
+  const currentSearchResults: any = useSelector( (state:state) => state.searchResults)
   const dispatch = useDispatch()
 console.log("SEARCH R", currentSearchResults)
   useEffect( () => {
@@ -64,4 +64,4 @@ console.log("SEARCH R", currentSearchResults)
   );
 }
 
-export default App;
+export default App

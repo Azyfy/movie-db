@@ -1,7 +1,7 @@
 import { getTopRated, getGenres, getSearchedTitle } from "../../services/moviedb"
 import { state, genre, movieTitles, showTitles } from "../../types"
 
-const reducer = ( state: state = {}, action: { type: string; data: any }) => {
+const reducer = ( state: state | undefined, action: { type: string; data: any}) => {
   switch (action.type) {
     case "INITIALIZE_TOP_RATED":
       const topRated = action.data
@@ -57,7 +57,7 @@ export const initializeGenres = () => {
 }
 
 export const initializeSearchResults = (type:string, searchTerm: string) => {
-  return async (dispatch: (arg0: { type: string; data: any }) => void) => {
+  return async (dispatch: (arg0: { type: string; data: [movieTitles | showTitles] | undefined }) => void) => {
     const searchResults = await getSearchedTitle(type, searchTerm)
     dispatch({
       type: "INITIALIZE_SEARCH_RESULTS",
