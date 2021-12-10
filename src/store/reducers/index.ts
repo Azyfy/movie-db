@@ -1,7 +1,11 @@
 import { getTopRated, getGenres, getSearchedTitle } from "../../services/moviedb"
 import { state, genre, movieTitles, showTitles } from "../../types"
 
-const reducer = ( state: state = {}, action: { type: string; data: any}) => {
+const initialState = {
+  searchTerm: ""
+}
+
+const reducer = ( state: state = initialState, action: { type: string; data: any}) => {
   switch (action.type) {
     case "INITIALIZE_TOP_RATED":
       const topRated = action.data
@@ -31,6 +35,13 @@ const reducer = ( state: state = {}, action: { type: string; data: any}) => {
         ...state,
         searchResults: clearResults 
       }
+    case "SET_SEARCH_TERM":
+        const searchTerm = action.data
+  
+        return {
+          ...state,
+          searchTerm
+        }
     case "ERROR":
       const errorMessage = action.data
 
@@ -108,6 +119,15 @@ export const clearSearchResults = () => {
     dispatch({
       type: "CLEAR_SEARCH_RESULTS",
       data: searchResults
+    })
+  }
+}
+
+export const setSearchTerm = (searchTerm: string) => {
+  return async (dispatch: (arg0: { type: string; data: string }) => void) => {
+    dispatch({
+      type: "SET_SEARCH_TERM",
+      data: searchTerm
     })
   }
 }

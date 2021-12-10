@@ -1,10 +1,13 @@
 import { useState, useEffect, ChangeEvent } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
+import { setSearchTerm } from "../store/reducers"
 import { initializeSearchResults, clearSearchResults } from "../store/reducers"
 
+import { state } from "../types"
 
-const useTimedValue = (value: string, time: number) => {
+
+const useTimedValue = (value: any, time: number) => {
     const [ timedValue, setTimedValue ] = useState(value)
 
     useEffect( () => {
@@ -22,21 +25,21 @@ const useTimedValue = (value: string, time: number) => {
 }
 
 const Search = ({ type }: { type:string }) => {
-    const [ searchInput, setSearchInput ] = useState<string>("")
-    const timedValue = useTimedValue(searchInput, 1000)
+    const searchTerm = useSelector( (state:state) => state.searchTerm)
+    const timedValue = useTimedValue( searchTerm , 1000)
     const dispatch = useDispatch()
 
     useEffect( () => {
 
         if(timedValue.length > 3) {
             console.log("HIGHER", timedValue.split(" ").join("+"))
-            let searchTerm = timedValue.split(" ").join("+")
+            let joinedSearchTerm = timedValue.split(" ").join("+")
 
             const fetch = async () => {    
-                dispatch(initializeSearchResults(type, searchTerm))
+                dispatch(initializeSearchResults(type, joinedSearchTerm))
               }
             
-              fetch()
+            fetch()
 
         }
         else {
@@ -45,16 +48,16 @@ const Search = ({ type }: { type:string }) => {
         }
     }, [timedValue, dispatch, type])
    
-    const searchForTitles = (e: ChangeEvent) => {
+    const handleChange = (e: ChangeEvent) => {
 
         let inputValue: string = (e.target as HTMLInputElement).value
-        setSearchInput(inputValue)    
+        dispatch(setSearchTerm(inputValue)) 
     }
 
     return (
         <div className="Search" >
 
-            <input value={searchInput} onChange={searchForTitles} placeholder="Search" />
+            <input value={searchTerm} onChange={handleChange} placeholder="Search" />
 
         </div>
     )
