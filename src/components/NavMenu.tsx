@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom"
 import { useState } from "react"
 
+import "./styles/NavMenu.css"
 import Search from "./Search"
 
 const NavMenu = () => {
@@ -19,7 +20,7 @@ const NavMenu = () => {
     return (
         <div className="NavMenu" >
 
-            <nav>
+            <nav className="nav" >
                 <Link to="/top-movies" onClick={ () => handleClick("movie") }  > Movies </Link>
                 <Link to="/top-shows" onClick={ () => handleClick("tv") }  > TV Shows </Link>
             </nav>

@@ -1,6 +1,7 @@
 import { useEffect, ChangeEvent } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
+import "./styles/Search.css"
 import { setSearchTerm } from "../store/reducers"
 import { initializeSearchResults, clearSearchResults } from "../store/reducers"
 import useTimedValue from "../hooks/useTimedValue"

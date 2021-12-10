@@ -49,7 +49,7 @@ console.log("SEARCH R", currentSearchResults)
   }
 
   return (
-    <div className="App font-face-darkblack">
+    <div className="App">
       
       <Header />
 
