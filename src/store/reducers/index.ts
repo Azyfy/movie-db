@@ -1,7 +1,7 @@
 import { getTopRated, getGenres, getSearchedTitle } from "../../services/moviedb"
 import { state, genre, movieTitles, showTitles } from "../../types"
 
-const reducer = ( state: state | undefined, action: { type: string; data: any}) => {
+const reducer = ( state: state = {}, action: { type: string; data: any}) => {
   switch (action.type) {
     case "INITIALIZE_TOP_RATED":
       const topRated = action.data

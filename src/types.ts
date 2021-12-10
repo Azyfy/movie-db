@@ -34,9 +34,9 @@ export interface genres {
 }
 
 export interface state {
-    topRated: topRated
-    genres: genres
-    searchResults: [movieTitles | showTitles] | null
+    topRated?: topRated
+    genres?: genres
+    searchResults?: [movieTitles | showTitles] | null
 }
 
 export interface titlesProps {
