@@ -1,4 +1,4 @@
-
+import "./styles/Error.css"
 
 const Error = ({ message }: { message: string | undefined }) => {
     console.log("MESSAGE", message)

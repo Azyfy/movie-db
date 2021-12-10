@@ -16,6 +16,7 @@ import NoMatch from "./components/NoMatch"
 import Header from "./components/Header"
 import NavMenu from "./components/NavMenu"
 import SingleTitle from "./components/SingleTitle"
+import Footer from "./components/Footer"
 import Error from "./components/Error"
 
 import { state } from "./types"
@@ -68,6 +69,7 @@ console.log("SEARCH R", currentSearchResults)
         </Routes>
       </Router>
 
+      <Footer />
     </div>
   );
 }

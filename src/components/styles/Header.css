@@ -1,4 +1,6 @@
 .Header {
+    background-color: black;
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

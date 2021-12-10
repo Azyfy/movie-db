@@ -1,0 +1,10 @@
+.Footer {
+    position: sticky;
+    bottom: 0;
+    background-color: black;
+    padding: 5px 0;
+    text-align: center;
+}
+.logo-footer {
+    height: 25px;
+}
