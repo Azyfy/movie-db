@@ -37,6 +37,7 @@ export interface state {
     topRated?: topRated
     genres?: genres
     searchResults?: [movieTitles | showTitles] | null
+    errorMessage?: string
 }
 
 export interface titlesProps {

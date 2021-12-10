@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
 
 import { getTitle } from "../services/moviedb"
+import { dispatchError } from "../store/reducers"
 import Loader from "./Loader"
 
 import { movieTitles, showTitles } from "../types"
@@ -9,6 +11,7 @@ import { movieTitles, showTitles } from "../types"
 const SingleTitle = ({ type }: { type:string }) => {
     const [ title, setTitle ] = useState<movieTitles | showTitles | null | undefined>(null)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     let params = useParams()
 
     useEffect( () => {
@@ -16,14 +19,21 @@ const SingleTitle = ({ type }: { type:string }) => {
         async function fetch() {
 
             let id:string|undefined = params.id
-            const singleTitle = await getTitle(id, type)
 
-            setTitle(singleTitle)
+            try {
+                const singleTitle = await getTitle(id, type)
+
+                setTitle(singleTitle)
+            }
+            catch (err: any) {
+                dispatch(dispatchError(err.message))
+            }
+
           }
         
         fetch()
 
-    }, [params.id, type])
+    }, [params.id, type, dispatch])
 
     if(!title) {
         return (

@@ -15,7 +15,8 @@ import Titles from "./components/Titles"
 import NoMatch from "./components/NoMatch"
 import Header from "./components/Header"
 import NavMenu from "./components/NavMenu"
-import SingleTitle from './components/SingleTitle'
+import SingleTitle from "./components/SingleTitle"
+import Error from "./components/Error"
 
 import { state } from "./types"
 
@@ -24,12 +25,19 @@ function App() {
   const topRated = useSelector( (state:state) => state.topRated)
   const genres = useSelector( (state:state) => state.genres)
   const currentSearchResults: any = useSelector( (state:state) => state.searchResults)
+  const errorMessage = useSelector( (state:state) => state.errorMessage)
   const dispatch = useDispatch()
 console.log("SEARCH R", currentSearchResults)
   useEffect( () => {
     dispatch(initializeTopRated())
     dispatch(initializeGenres())
   }, [dispatch])
+
+  if(errorMessage) {
+    return (
+      <Error message={errorMessage} />
+    )
+  }
 
   console.log( "TR", topRated)
   console.log( "G", genres)
