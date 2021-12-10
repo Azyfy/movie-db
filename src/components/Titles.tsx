@@ -17,7 +17,7 @@ const Titles = ( props: titlesProps  ) => {
 
     return (
         <div className="Titles" >
-            
+            <h2 className="font-face-mfstrip" > { props.heading } </h2>
             <div className="titles-container" >
                 {
                     props?.titles?.map( (title) => {

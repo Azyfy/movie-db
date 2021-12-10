@@ -46,7 +46,7 @@ const SingleTitle = ({ type }: { type:string }) => {
             <button onClick={ () => navigate(-1) } > Back </button>
             <div className="single-title-container" key={ title.id } >
                 <img src={`https://image.tmdb.org/t/p/w300/${title.backdrop_path || title.poster_path}`} alt={`image for ` + ((title as any).name || (title as any).title) }/>
-                <h3> { (title as any).name || (title as any).title } </h3>
+                <h3 className="font-face-undeveloped" > { (title as any).name || (title as any).title } </h3>
                 <p> { (title as any).release_date || (title as any).first_air_date } </p>
                 
                 <p> { title.overview } </p>

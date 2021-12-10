@@ -45,4 +45,5 @@ export interface titlesProps {
     titles: [showTitles] | [movieTitles]
     genres: [genre]
     currentPath: string
+    heading: string
 }

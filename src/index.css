@@ -5,11 +5,46 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-size-adjust: 0.58;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+	font-family: "ACFilmstrip";
+	src: url("./assets/fonts/ACFilmstrip.otf")
+  }
+@font-face {
+font-family: "moviefilmstrip";
+src: url("./assets/fonts/movie-filmstrip.regular.ttf")
+}
+@font-face {
+font-family: "undeveloped";
+src: url("./assets/fonts/undeveloped.book-regular.ttf")
+}
+@font-face {
+font-family: "darkblack";
+src: url("./assets/fonts/dark-black.regular.otf")
+}
+
+.font-face-acfilmstrip {
+	font-family: "ACFilmstrip";
+}
+
+.font-face-mfstrip {
+	font-family: "moviefilmstrip";
+}
+
+.font-face-undeveloped {
+	font-family: "undeveloped";
+}
+
+.font-face-darkblack {
+	font-family: "darkblack";
 }
 
 /*  CSS reset  */

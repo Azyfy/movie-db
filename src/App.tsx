@@ -49,7 +49,7 @@ console.log("SEARCH R", currentSearchResults)
   }
 
   return (
-    <div className="App">
+    <div className="App font-face-darkblack">
       
       <Header />
 
@@ -59,8 +59,8 @@ console.log("SEARCH R", currentSearchResults)
 
         <Routes>
           <Route  path="/" element={ <Navigate to="/top-shows" /> } />
-          <Route  path="/top-shows" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topShows } genres={genres.movieGenres} currentPath="/top-shows" /> } />
-          <Route  path="/top-movies" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topMovies} genres={genres.showGenres} currentPath="/top-movies" /> } />
+          <Route  path="/top-shows" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topShows } genres={genres.movieGenres} heading="TV Shows" currentPath="/top-shows" /> } />
+          <Route  path="/top-movies" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topMovies} genres={genres.showGenres} heading="Movies" currentPath="/top-movies" /> } />
           <Route  path="/top-shows/:id" element={ <SingleTitle  type={"tv"} /> } />
           <Route  path="/top-movies/:id" element={ <SingleTitle type={"movie"} /> } />
 

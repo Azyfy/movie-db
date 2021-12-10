@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div className="Header" >
 
-            <h1> Movie and TV shows DB </h1>
+            <h1 className="font-face-acfilmstrip" > Movie and TV shows DB </h1>
             _______________________________
             
         </div>
