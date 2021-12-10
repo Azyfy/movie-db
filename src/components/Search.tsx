@@ -23,7 +23,7 @@ const useTimedValue = (value: string, time: number) => {
 
 const Search = ({ type }: { type:string }) => {
     const [ searchInput, setSearchInput ] = useState<string>("")
-    const timedValue = useTimedValue(searchInput, 5000)
+    const timedValue = useTimedValue(searchInput, 1000)
     const dispatch = useDispatch()
 
     useEffect( () => {
