@@ -1,28 +1,11 @@
-import { useState, useEffect, ChangeEvent } from "react"
+import { useEffect, ChangeEvent } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import { setSearchTerm } from "../store/reducers"
 import { initializeSearchResults, clearSearchResults } from "../store/reducers"
+import useTimedValue from "../hooks/useTimedValue"
 
 import { state } from "../types"
-
-
-const useTimedValue = (value: any, time: number) => {
-    const [ timedValue, setTimedValue ] = useState(value)
-
-    useEffect( () => {
-        const searchTimer = setTimeout( () => {
-            setTimedValue(value)
-            console.log("TIMEOUT", value, timedValue)
-        }, time )
-
-        return () => {
-            clearTimeout(searchTimer)
-          }
-    }, [timedValue, value, time])
-
-    return timedValue
-}
 
 const Search = ({ type }: { type:string }) => {
     const searchTerm = useSelector( (state:state) => state.searchTerm)
