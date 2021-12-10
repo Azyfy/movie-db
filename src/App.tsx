@@ -53,22 +53,22 @@ console.log("SEARCH R", currentSearchResults)
     <div className="App">
       
       <Header />
+      <main>
+        <Router>
 
-      <Router>
+          <NavMenu />
 
-        <NavMenu />
+          <Routes>
+            <Route  path="/" element={ <Navigate to="/top-shows" /> } />
+            <Route  path="/top-shows" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topShows } genres={genres.movieGenres} heading="TV Shows" currentPath="/top-shows" /> } />
+            <Route  path="/top-movies" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topMovies} genres={genres.showGenres} heading="Movies" currentPath="/top-movies" /> } />
+            <Route  path="/top-shows/:id" element={ <SingleTitle  type={"tv"} /> } />
+            <Route  path="/top-movies/:id" element={ <SingleTitle type={"movie"} /> } />
 
-        <Routes>
-          <Route  path="/" element={ <Navigate to="/top-shows" /> } />
-          <Route  path="/top-shows" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topShows } genres={genres.movieGenres} heading="TV Shows" currentPath="/top-shows" /> } />
-          <Route  path="/top-movies" element={ <Titles titles={(currentSearchResults)? currentSearchResults : topRated.topMovies} genres={genres.showGenres} heading="Movies" currentPath="/top-movies" /> } />
-          <Route  path="/top-shows/:id" element={ <SingleTitle  type={"tv"} /> } />
-          <Route  path="/top-movies/:id" element={ <SingleTitle type={"movie"} /> } />
-
-          <Route path="*" element={ <NoMatch /> } />
-        </Routes>
-      </Router>
-
+            <Route path="*" element={ <NoMatch /> } />
+          </Routes>
+        </Router>
+      </main>
       <Footer />
     </div>
   );
