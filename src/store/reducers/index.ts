@@ -7,48 +7,54 @@ const initialState = {
 
 const reducer = ( state: state = initialState, action: { type: string; data: any}) => {
   switch (action.type) {
-    case "INITIALIZE_TOP_RATED":
+    case "INITIALIZE_TOP_RATED": {
       const topRated = action.data
 
       return {
         ...state,
         topRated
       }
-    case "INITIALIZE_GENRES":
+    }
+    case "INITIALIZE_GENRES": {
       const genres = action.data
 
       return {
         ...state,
         genres
       }
-    case "INITIALIZE_SEARCH_RESULTS":
+    }
+    case "INITIALIZE_SEARCH_RESULTS": {
       const searchResults = action.data
 
       return {
         ...state,
         searchResults
       }
-    case "CLEAR_SEARCH_RESULTS":
+    }
+    case "CLEAR_SEARCH_RESULTS": {
       const clearResults = action.data
 
       return {
         ...state,
-        searchResults: clearResults 
+        searchResults: clearResults
       }
-    case "SET_SEARCH_TERM":
-        const searchTerm = action.data
-  
-        return {
-          ...state,
-          searchTerm
-        }
-    case "ERROR":
+    }
+    case "SET_SEARCH_TERM": {
+      const searchTerm = action.data
+
+      return {
+        ...state,
+        searchTerm
+      }
+    }
+    case "ERROR": {
       const errorMessage = action.data
 
-        return {
-          ...state,
-          errorMessage
-        }
+      return {
+        ...state,
+        errorMessage
+      }
+    }
     default:
       return state
   }
@@ -63,7 +69,7 @@ const handleError = (message: string) => {
 
 export const initializeTopRated = () => {
   return async (dispatch: (arg0: { type: string; data: { topMovies: [movieTitles]; topShows: [showTitles] } | string | undefined }) => void) => {
-    
+
     try {
       const topRated = await getTopRated()
 
@@ -81,7 +87,7 @@ export const initializeTopRated = () => {
 
 export const initializeGenres = () => {
   return async (dispatch: (arg0: { type: string; data: { movieGenres: [genre]; showGenres: [genre] } | string | undefined }) => void) => {
-    
+
     try {
       const genres = await getGenres()
       dispatch({
@@ -98,7 +104,7 @@ export const initializeGenres = () => {
 
 export const initializeSearchResults = (type:string, searchTerm: string) => {
   return async (dispatch: (arg0: { type: string; data: [movieTitles | showTitles] | string| undefined }) => void) => {
-    
+
     try {
       const searchResults = await getSearchedTitle(type, searchTerm)
       dispatch({

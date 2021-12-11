@@ -1,3 +1,4 @@
+import React from "react"
 import { Link, useLocation } from "react-router-dom"
 import { useState } from "react"
 
@@ -5,7 +6,7 @@ import "./styles/NavMenu.css"
 import Search from "./Search"
 
 const NavMenu = () => {
-    let location = useLocation()
+    const location = useLocation()
     const [navPath, setNahPath] = useState( (location.pathname.slice(1, 6) === "top-m" ) ?
                                                 "movie" : "tv" )
 
@@ -26,7 +27,7 @@ const NavMenu = () => {
             </nav>
 
             <Search type={navPath} />
-            
+
         </div>
     )
 }

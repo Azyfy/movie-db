@@ -4,7 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 
 import reducer from "./reducers"
 
-export const store = createStore(reducer, 
-    composeWithDevTools( 
-        applyMiddleware(thunk) 
+export const store = createStore(reducer,
+    composeWithDevTools(
+        applyMiddleware(thunk)
     ))

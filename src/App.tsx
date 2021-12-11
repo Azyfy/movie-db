@@ -1,5 +1,5 @@
-import React from 'react';
-import './App.css';
+import React from "react"
+import "./App.css"
 import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { initializeTopRated, initializeGenres } from "./store/reducers"
@@ -51,7 +51,7 @@ console.log("SEARCH R", currentSearchResults)
 
   return (
     <div className="App">
-      
+
       <Header />
       <main>
         <Router>
@@ -71,7 +71,7 @@ console.log("SEARCH R", currentSearchResults)
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
 export default App

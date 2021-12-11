@@ -1,3 +1,4 @@
+import React from "react"
 import "./styles/NoMatch.css"
 
 const NoMatch = () => {
@@ -8,7 +9,7 @@ const NoMatch = () => {
             <p> Wrong turn </p>
             <p> The route doesnt exist </p>
             <p> Turn back </p>
-            
+
         </div>
     )
 }

@@ -1,3 +1,4 @@
+import React from "react"
 import { Link } from "react-router-dom"
 
 import "./styles/Titles.css"
@@ -7,7 +8,7 @@ import { titlesProps } from "../types"
 import PictureBackdrop from "./PictureBackdrop"
 
 const Titles = ( props: titlesProps  ) => {
- 
+
     if(props.titles.length < 1) {
         return (
             <div>
@@ -38,7 +39,7 @@ const Titles = ( props: titlesProps  ) => {
                     })
                 }
             </div>
-            
+
         </div>
     )
 }

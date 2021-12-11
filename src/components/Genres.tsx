@@ -1,3 +1,4 @@
+import React from "react"
 import { genre } from "../types"
 
 const Genres = ({ titleGenres, genres }: { titleGenres: [id: number]; genres: [genre] } ) => {
@@ -12,7 +13,7 @@ const Genres = ({ titleGenres, genres }: { titleGenres: [id: number]; genres: [g
                         <span key={ genre.id } > { genre.name } </span>
                     )
                 })
-            }     
+            }
         </div>
     )
 }

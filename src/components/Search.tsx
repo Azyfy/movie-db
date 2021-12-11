@@ -1,3 +1,4 @@
+import React from "react"
 import { useEffect, ChangeEvent } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
@@ -17,12 +18,12 @@ const Search = ({ type }: { type:string }) => {
 
         if(timedValue.length > 3) {
             console.log("HIGHER", timedValue.split(" ").join("+"))
-            let joinedSearchTerm = timedValue.split(" ").join("+")
+            const joinedSearchTerm = timedValue.split(" ").join("+")
 
-            const fetch = async () => {    
+            const fetch = async () => {
                 dispatch(initializeSearchResults(type, joinedSearchTerm))
               }
-            
+
             fetch()
 
         }
@@ -31,11 +32,11 @@ const Search = ({ type }: { type:string }) => {
             dispatch(clearSearchResults())
         }
     }, [timedValue, dispatch, type])
-   
+
     const handleChange = (e: ChangeEvent) => {
 
-        let inputValue: string = (e.target as HTMLInputElement).value
-        dispatch(setSearchTerm(inputValue)) 
+        const inputValue: string = (e.target as HTMLInputElement).value
+        dispatch(setSearchTerm(inputValue))
     }
 
     return (
