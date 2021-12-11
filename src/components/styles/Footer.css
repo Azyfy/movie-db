@@ -1,7 +1,10 @@
 .Footer {
     position: sticky;
     bottom: 0;
-    background-color: black;
+    background: rgb(44,144,235);
+    background: linear-gradient(90deg, rgba(44,144,235,1) 10%,
+                 rgba(1,0,61,1) 30%, rgba(1,0,61,1) 70%,
+                  rgba(44,144,235,1) 90%);
     padding: 5px 0;
     text-align: center;
 }

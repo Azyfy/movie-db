@@ -1,5 +1,8 @@
 .Header {
-    background-color: black;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 10%,  
+                rgba(54,52,223,0.5) 50%, 
+                rgba(2,0,36,1) 90%);
     color: white;
     display: flex;
     flex-direction: row;
