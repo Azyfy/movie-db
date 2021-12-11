@@ -4,6 +4,7 @@ import "./styles/Titles.css"
 import Genres from "./Genres"
 
 import { titlesProps } from "../types"
+import PictureBackdrop from "./PictureBackdrop"
 
 const Titles = ( props: titlesProps  ) => {
  
@@ -24,11 +25,7 @@ const Titles = ( props: titlesProps  ) => {
                         return(
                             <div className="title-container" key={ title.id }  >
                                 <Link to={`${props.currentPath}/${title.id}`} key={ title.id } >
-                                    <picture>
-                                        <source media="(min-width:1023px)" srcSet={`https://image.tmdb.org/t/p/w1280/${ title.backdrop_path || title.poster_path}`} />
-                                        <source media="(min-width: 768px)" srcSet={`https://image.tmdb.org/t/p/w780/${title.backdrop_path || title.poster_path}`} />
-                                        <img className="backdrop-poster" src={`https://image.tmdb.org/t/p/w300/${title.backdrop_path || title.poster_path}`} alt={`image for ` + ((title as any).name || (title as any).title) }/>
-                                    </picture> 
+                                    <PictureBackdrop nameForClass="backdrop-poster" backdrop={  title.backdrop_path || title.poster_path } name={ ((title as any).name || (title as any).title) }  />
 
                                     <h3> { (title as any).name || (title as any).title } </h3>
                                     <p> { (title as any).release_date || (title as any).first_air_date } </p>

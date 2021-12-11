@@ -6,11 +6,13 @@ import "./styles/SingleTitle.css"
 import { getTitle } from "../services/moviedb"
 import { dispatchError } from "../store/reducers"
 import Loader from "./Loader"
+import PictureBackdrop from "./PictureBackdrop"
+import VideoFrame from "./VideoFrame"
 
-import { movieTitles, showTitles } from "../types"
+import { singleMovieTitle, singleShowTitle } from "../types"
 
 const SingleTitle = ({ type }: { type:string }) => {
-    const [ title, setTitle ] = useState<movieTitles | showTitles | null | undefined>(null)
+    const [ title, setTitle ] = useState<singleMovieTitle | singleShowTitle | null | undefined>(null)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     let params = useParams()
@@ -41,16 +43,19 @@ const SingleTitle = ({ type }: { type:string }) => {
             <Loader />
         )
     }
-
+    console.log("SINGLE TITLE", title)
+    console.log("SINGLE TITLE VIDEOS", title.videos.results)
     return (
         <div className="SingleTitle" >
             <button id="back-btn" onClick={ () => navigate(-1) } > Back </button>
             <div className="single-title-container" key={ title.id } >
-                <picture>
-                    <source media="(min-width:1023px)" srcSet={`https://image.tmdb.org/t/p/w1280/${ title.backdrop_path || title.poster_path}`} />
-                    <source media="(min-width:768px)" srcSet={`https://image.tmdb.org/t/p/w780/${title.backdrop_path || title.poster_path}`} />
-                    <img className="single-backdrop-poster" src={`https://image.tmdb.org/t/p/w300/${title.backdrop_path || title.poster_path}`} alt={`image for ` + ((title as any).name || (title as any).title) }/>
-                </picture> 
+
+                {
+                    (title.videos.results.length > 0) ? 
+                    <VideoFrame videos={ title.videos } />
+                    : <PictureBackdrop nameForClass="single-backdrop-poster" backdrop={ title.backdrop_path || title.poster_path }  name={ (title as any).name || ((title as any).title) } />
+                }
+
                 <h3 className="title-heading font-face-undeveloped" > { (title as any).name || (title as any).title } </h3>
                 <p> { (title as any).release_date || (title as any).first_air_date } </p>
                 

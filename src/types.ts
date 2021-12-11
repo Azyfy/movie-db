@@ -18,6 +18,25 @@ export interface showTitles extends baseTitles {
     first_air_date: string
   }
 
+export interface videos {
+    results: [video]
+}
+
+interface video {
+    id: string
+    key: string
+    name: string
+    site: string
+}
+
+export interface singleMovieTitle extends movieTitles  {
+    videos: videos
+}
+
+export interface singleShowTitle extends showTitles {
+    videos: videos
+}
+
 export interface topRated {
     topMovies: [movieTitles]
     topShows: [showTitles]

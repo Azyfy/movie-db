@@ -1,6 +1,6 @@
 import axios from "axios"
 
-import { movieTitles, showTitles, genre } from "../types"
+import { movieTitles, showTitles, genre, singleMovieTitle, singleShowTitle } from "../types"
 
 function getTopRatedMovies() {
     return axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
@@ -48,7 +48,7 @@ export const getGenres = async () => {
 export const getTitle = async (id:number|string|undefined, type:string) => {
 
     const titleResult = await axios.get(`https://api.themoviedb.org/3/${type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&append_to_response=videos`)
-    const title: movieTitles | showTitles = titleResult.data
+    const title: singleMovieTitle | singleShowTitle = titleResult.data
 
     return title
 
