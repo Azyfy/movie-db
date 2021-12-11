@@ -1,7 +1,7 @@
 import React from "react"
 import { genre } from "../types"
 
-const Genres = ({ titleGenres, genres }: { titleGenres: [id: number]; genres: [genre] } ) => {
+const Genres = ({ titleGenres, genres }: { titleGenres: number[]; genres: genre[] } ) => {
 
     const filteredGenre = genres.filter( (genre) => titleGenres.includes(genre.id) )
 

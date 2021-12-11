@@ -12,7 +12,7 @@ const Titles = ( props: titlesProps  ) => {
     if(props.titles.length < 1) {
         return (
             <div>
-                Nothing found
+                No results
             </div>
         )
     }
