@@ -6,7 +6,6 @@ const useTimedValue = (value: any, time: number) => {
     useEffect( () => {
         const searchTimer = setTimeout( () => {
             setTimedValue(value)
-            console.log("TIMEOUT", value, timedValue)
         }, time )
 
         return () => {

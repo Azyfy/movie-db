@@ -28,7 +28,7 @@ function App() {
   const currentSearchResults: any = useSelector( (state:state) => state.searchResults)
   const errorMessage = useSelector( (state:state) => state.errorMessage)
   const dispatch = useDispatch()
-console.log("SEARCH R", currentSearchResults)
+
   useEffect( () => {
     dispatch(initializeTopRated())
     dispatch(initializeGenres())
@@ -39,9 +39,6 @@ console.log("SEARCH R", currentSearchResults)
       <Error message={errorMessage} />
     )
   }
-
-  console.log( "TR", topRated)
-  console.log( "G", genres)
 
   if(!topRated || !genres) {
     return (

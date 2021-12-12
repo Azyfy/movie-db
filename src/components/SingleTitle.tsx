@@ -43,8 +43,7 @@ const SingleTitle = ({ type }: { type:string }) => {
             <Loader />
         )
     }
-    console.log("SINGLE TITLE", title)
-    console.log("SINGLE TITLE VIDEOS", title.videos.results)
+
     return (
         <div className="SingleTitle" >
             <button id="back-btn" onClick={ () => navigate(-1) } > Back </button>

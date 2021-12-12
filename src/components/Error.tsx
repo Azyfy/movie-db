@@ -2,7 +2,7 @@ import React from "react"
 import "./styles/Error.css"
 
 const Error = ({ message }: { message: string | undefined }) => {
-    console.log("MESSAGE", message)
+
     return (
         <div className="Error" >
 

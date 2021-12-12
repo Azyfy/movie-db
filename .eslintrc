@@ -21,7 +21,7 @@
       "@typescript-eslint/explicit-module-boundary-types": 0,
       "@typescript-eslint/no-explicit-any": 0,
       "no-unused-vars": "off",
-      "no-console": 0,
+      "no-console": 1,
       "quotes": [2, "double"],
         "semi": [
             "error",

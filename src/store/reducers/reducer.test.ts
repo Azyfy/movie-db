@@ -54,7 +54,7 @@ describe("reducer", () => {
     expect(newState).toEqual({ topRated: action.data })
   })
 
-  test("returns new state with action INITIALIZE_GENRES", () => { 
+  test("returns new state with action INITIALIZE_GENRES", () => {
     const state: state = {}
 
     const movieGenres = [{ id: 13, name: "test" }, { id:17, name: "test2" }]
@@ -76,7 +76,7 @@ describe("reducer", () => {
     expect(newState).toEqual({ genres: action.data })
   })
 
-  test("returns new state with action INITIALIZE_SEARCH_RESULTS", () => { 
+  test("returns new state with action INITIALIZE_SEARCH_RESULTS", () => {
     const state: state = {}
 
     const search = {
@@ -97,7 +97,7 @@ describe("reducer", () => {
     expect(newState).toEqual({ searchResults: action.data })
   })
 
-  test("returns new state with action CLEAR_SEARCH_RESULTS", () => { 
+  test("returns new state with action CLEAR_SEARCH_RESULTS", () => {
     const state: state = {}
 
     const action = {
@@ -111,7 +111,7 @@ describe("reducer", () => {
     expect(newState).toEqual({ searchResults: null })
   })
 
-  test("returns new state with action SET_SEARCH_TERM", () => { 
+  test("returns new state with action SET_SEARCH_TERM", () => {
     const state: state = {}
 
     const action = {
@@ -125,7 +125,7 @@ describe("reducer", () => {
     expect(newState).toEqual({ searchTerm: "Test" })
   })
 
-  test("returns new state with action ERROR", () => { 
+  test("returns new state with action ERROR", () => {
     const state: state = {
       searchTerm: "test"
     }
@@ -141,7 +141,7 @@ describe("reducer", () => {
     expect(newState).toEqual({ searchTerm: "test", errorMessage: "Test Error Message" })
   })
 
-  test("returns same state with invalid action, default block", () => { 
+  test("returns same state with invalid action, default block", () => {
     const state: state = {
       errorMessage: "test"
     }

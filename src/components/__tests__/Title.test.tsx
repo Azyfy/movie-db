@@ -33,7 +33,7 @@ describe("Title component", () => {
     })
 
     test("Title component renders data of show object", () => {
-    
+
         const title: any = {
             "backdrop_path": "/7q448EVOnuE3gVAx24krzO7SNXM.jpg",
             "first_air_date": "2021-09-03",
@@ -56,7 +56,7 @@ describe("Title component", () => {
             "vote_average": 9.4,
             "vote_count": 2570
             }
-    
+
         const component = render(<Title title={ title }  />)
 
         expect(component.container).toHaveTextContent("he D'Amelio Show")
