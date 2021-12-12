@@ -14,7 +14,8 @@ const NavMenu = () => {
         setNahPath(value)
     }
 
-    if(location.pathname !== "/top-movies" && location.pathname !== "/top-shows" ) {
+    if(( location.pathname !== "/top-movies" && location.pathname !== "/top-movies/")
+        && ( location.pathname !== "/top-shows" && location.pathname !== "/top-shows/" )) {
         return null
     }
 
