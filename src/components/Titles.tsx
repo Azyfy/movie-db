@@ -26,7 +26,7 @@ const Titles = ( props: titlesProps  ) => {
                         return(
                             <div className="title-container" key={ title.id }  >
                                 <Link to={`${props.currentPath}/${title.id}`} key={ title.id } >
-                                    <PictureBackdrop nameForClass="backdrop-poster" backdrop={  title.backdrop_path || title.poster_path } name={ ((title as any).name || (title as any).title) }  />
+                                    <PictureBackdrop nameForClass="backdrop-poster" backdrop={  title.backdrop_path  } name={ ((title as any).name || (title as any).title) }  />
 
                                     <h3> { (title as any).name || (title as any).title } </h3>
                                     <p> { (title as any).release_date || (title as any).first_air_date } </p>

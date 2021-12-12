@@ -16,7 +16,7 @@ const Search = ({ type }: { type:string }) => {
 
     useEffect( () => {
 
-        if(timedValue.length > 3) {
+        if(timedValue.length >= 3) {
             console.log("HIGHER", timedValue.split(" ").join("+"))
             const joinedSearchTerm = timedValue.split(" ").join("+")
 

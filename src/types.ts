@@ -6,6 +6,8 @@ interface baseTitles {
     popularity: number
     overview: string
     vote_average: number
+    tagline: string
+    status: string
 }
 
 export interface movieTitles extends baseTitles {
@@ -31,10 +33,13 @@ interface video {
 
 export interface singleMovieTitle extends movieTitles  {
     videos: videos
+    runtime: number
 }
 
 export interface singleShowTitle extends showTitles {
     videos: videos
+    number_of_episodes: number
+    number_of_seasons: number
 }
 
 export interface topRated {

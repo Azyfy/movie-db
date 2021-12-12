@@ -4,6 +4,7 @@
                  rgba(9,9,121,1) 35%,
                   rgba(0,212,255,1) 100%);
     min-height: 100vh;
+    line-height: 1.2;
 }
 
 a {
@@ -13,4 +14,10 @@ a {
 
 main {
     min-height: 90vh;
+}
+
+@media screen and (min-width: 1024px)  { 
+    p, span {
+        font-size: 1.5vw;
+    }
 }

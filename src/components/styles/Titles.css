@@ -31,11 +31,16 @@
 .title-container > a {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 
 .title-container:hover {
     box-shadow: inset  0 0 25px 5px var(--tertiary);
+}
+
+.title-container:hover > * {
+    transform: scale(1.1)
 }
 
 .backdrop-poster{
