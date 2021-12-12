@@ -14,9 +14,12 @@ code {
     monospace;
 }
 
-html, body, #root {
-    min-height: 100vh;
-}
+:root {
+	--primary: #0d253f;
+	--secondary: #01b4e4;
+	--tertiary: #90cea1;
+	--heading-color: #f5c518;
+  }
 
 @font-face {
 	font-family: "ACFilmstrip";
@@ -30,10 +33,7 @@ src: url("./assets/fonts/movie-filmstrip.regular.ttf")
 font-family: "undeveloped";
 src: url("./assets/fonts/undeveloped.book-regular.ttf")
 }
-@font-face {
-font-family: "darkblack";
-src: url("./assets/fonts/dark-black.regular.otf")
-}
+
 
 .font-face-acfilmstrip {
 	font-family: "ACFilmstrip";
@@ -45,10 +45,6 @@ src: url("./assets/fonts/dark-black.regular.otf")
 
 .font-face-undeveloped {
 	font-family: "undeveloped";
-}
-
-.font-face-darkblack {
-	font-family: "darkblack";
 }
 
 /*  CSS reset  */

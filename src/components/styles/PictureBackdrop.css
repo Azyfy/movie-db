@@ -1,9 +1,10 @@
 .PictureBackdrop {
+    position: relative;
     min-width: 200px;
     min-height: 200px;
     background-image: url("../../assets/images/popcorn.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100px 100px;
+    background-size: 50% auto;
     
 }
