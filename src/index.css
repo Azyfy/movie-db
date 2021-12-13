@@ -5,8 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  font-size-adjust: 0.58;
 }
 
 code {
@@ -18,33 +16,45 @@ code {
 	--primary: #0d253f;
 	--secondary: #01b4e4;
 	--tertiary: #90cea1;
-	--heading-color: #f5c518;
+	--text-color: #f5c518;
   }
 
 @font-face {
 	font-family: "ACFilmstrip";
 	src: url("./assets/fonts/ACFilmstrip.otf")
-  }
-@font-face {
-font-family: "moviefilmstrip";
-src: url("./assets/fonts/movie-filmstrip.regular.ttf")
 }
 @font-face {
-font-family: "undeveloped";
-src: url("./assets/fonts/undeveloped.book-regular.ttf")
+	font-family: "moviefilmstrip";
+	src: url("./assets/fonts/movie-filmstrip.regular.ttf")
+}
+@font-face {
+	font-family: "undeveloped";
+	src: url("./assets/fonts/undeveloped.book-regular.ttf")
+}
+@font-face {
+	font-family: "bellefair";
+	src: url("./assets/fonts/Bellefair-Regular.ttf")
 }
 
 
 .font-face-acfilmstrip {
 	font-family: "ACFilmstrip";
+	font-size-adjust: 0.58;
 }
 
 .font-face-mfstrip {
 	font-family: "moviefilmstrip";
+	font-size-adjust: 0.58;
 }
 
 .font-face-undeveloped {
 	font-family: "undeveloped";
+	font-size-adjust: 0.58;
+}
+
+.font-face-bellefair {
+	font-family: "bellefair";
+	font-size-adjust: 0.58;
 }
 
 /*  CSS reset  */

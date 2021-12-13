@@ -28,7 +28,7 @@ const Titles = ( props: titlesProps  ) => {
                                 <Link to={`${props.currentPath}/${title.id}`} key={ title.id } >
                                     <PictureBackdrop nameForClass="backdrop-poster" backdrop={  title.backdrop_path  } name={ ((title as any).name || (title as any).title) }  />
 
-                                    <h3> { (title as any).name || (title as any).title } </h3>
+                                    <h3 className="titles-heading" > { (title as any).name || (title as any).title } </h3>
                                     <p> { (title as any).release_date || (title as any).first_air_date } </p>
                                     <Genres titleGenres={title.genre_ids} genres={props.genres} />
                                     <p> { title.overview.slice(0, 100) } . . . </p>

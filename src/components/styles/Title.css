@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 .single-title-container {
@@ -10,9 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
-    padding: 25px;
-    width: 70%;
+    padding: 25px 0;
 }
 
 .details-container {
@@ -33,6 +32,7 @@
 
 .title-heading {
     font-size: 5vw;
+    color: white;
 }
 
 .video, .VideoFrame, .single-backdrop-poster {
@@ -42,6 +42,8 @@
 .VideoFrame {
     resize: both;
     overflow: auto;
+    width: 80vw;
+    min-height: 250px;
     border: 5px double black
 }
 
@@ -52,16 +54,21 @@
 
 .desc-t {
     font-weight: bold;
+    color: var(--text-color);
 }
 
 #tagline {
     text-align: center;
-    color: white;
+    color: var(--text-color);
 }
 
 @media screen and (min-width: 1024px)  { 
     .single-poster {
         display: block;
         width: 25vw;
+    }
+
+    .single-title-container {
+        padding: 0 50px;
     }
 }
