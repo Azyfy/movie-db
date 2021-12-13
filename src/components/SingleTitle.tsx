@@ -25,7 +25,6 @@ const SingleTitle = ({ type }: { type:string }) => {
 
             try {
                 const singleTitle = await getTitle(id, type)
-
                 setTitle(singleTitle)
             }
             catch (err: any) {

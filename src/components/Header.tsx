@@ -13,7 +13,6 @@ const Header = () => {
             <h1 className="main-title font-face-acfilmstrip" > Movie and TV Show DB </h1>
 
             <div className="ld-mode" >
-
             </div>
 
         </header>

@@ -62,7 +62,7 @@ export interface state {
     genres?: genres
     searchResults?: [movieTitles | showTitles] | null
     errorMessage?: string
-    searchTerm?: string
+    searchTerm: string
 }
 
 export interface titlesProps {

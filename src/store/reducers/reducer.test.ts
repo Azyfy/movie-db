@@ -4,8 +4,12 @@ import deepFreeze from "deep-freeze"
 import { state } from "../../types"
 
 describe("reducer", () => {
+  const initialState = {
+    searchTerm: ""
+  }
+
   test("returns new state with action INITIALIZE_TOP_RATED", () => {
-    const state: state = {}
+    const state: state = initialState
 
     const topMovies = [{
       "backdrop_path": "/5hNcsnMkwU2LknLoru73c76el3z.jpg",
@@ -51,11 +55,11 @@ describe("reducer", () => {
     const newState = reducer(state, action)
 
     expect(newState.topRated.topMovies).toHaveLength(1)
-    expect(newState).toEqual({ topRated: action.data })
+    expect(newState).toEqual({ topRated: action.data, ...initialState })
   })
 
   test("returns new state with action INITIALIZE_GENRES", () => {
-    const state: state = {}
+    const state: state = initialState
 
     const movieGenres = [{ id: 13, name: "test" }, { id:17, name: "test2" }]
     const showGenres = [{ id: 5, name: "test3" }]
@@ -73,11 +77,11 @@ describe("reducer", () => {
 
     expect(newState.genres.movieGenres).toHaveLength(2)
     expect(newState.genres.showGenres).toHaveLength(1)
-    expect(newState).toEqual({ genres: action.data })
+    expect(newState).toEqual({ genres: action.data, ...initialState })
   })
 
   test("returns new state with action INITIALIZE_SEARCH_RESULTS", () => {
-    const state: state = {}
+    const state: state = initialState
 
     const search = {
       name: "name",
@@ -94,11 +98,11 @@ describe("reducer", () => {
     deepFreeze(state)
     const newState = reducer(state, action)
 
-    expect(newState).toEqual({ searchResults: action.data })
+    expect(newState).toEqual({ searchResults: action.data, ...initialState })
   })
 
   test("returns new state with action CLEAR_SEARCH_RESULTS", () => {
-    const state: state = {}
+    const state: state = initialState
 
     const action = {
       type: "CLEAR_SEARCH_RESULTS",
@@ -108,11 +112,11 @@ describe("reducer", () => {
     deepFreeze(state)
     const newState = reducer(state, action)
 
-    expect(newState).toEqual({ searchResults: null })
+    expect(newState).toEqual({ searchResults: null, ...initialState })
   })
 
   test("returns new state with action SET_SEARCH_TERM", () => {
-    const state: state = {}
+    const state: state = initialState
 
     const action = {
       type: "SET_SEARCH_TERM",
@@ -143,6 +147,7 @@ describe("reducer", () => {
 
   test("returns same state with invalid action, default block", () => {
     const state: state = {
+      ...initialState,
       errorMessage: "test"
     }
 
@@ -154,7 +159,7 @@ describe("reducer", () => {
     deepFreeze(state)
     const newState = reducer(state, action)
 
-    expect(newState).toEqual({ errorMessage: "test" })
+    expect(newState).toEqual({ errorMessage: "test", ...initialState })
   })
 
 })

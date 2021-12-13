@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const useTimedValue = (value: any, time: number) => {
+const useTimedValue = (value: string, time: number) => {
     const [ timedValue, setTimedValue ] = useState(value)
 
     useEffect( () => {
