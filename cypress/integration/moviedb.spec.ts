@@ -72,15 +72,15 @@ describe("MovieDB", () => {
 
         it("loads top tv shows", () => {
             cy.get(".title-container").should('have.length', 10)
-            cy.get(".title-container").first().contains("The D'Amelio Show")
-            cy.get(".title-container").last().contains("The Rising of the Shield Hero")
+            cy.get(".title-container").contains("The D'Amelio Show")
+            cy.get(".title-container").contains("The Rising of the Shield Hero")
             cy.get(".title-container").contains("Arcane")
         })
 
         it("loads top movies", () => {
             cy.get(".nav > a").first().contains("Movies").click()
-            cy.get(".title-container").first().contains("Dilwale Dulhania Le Jayenge")
-            cy.get(".title-container").last().contains("Evangelion: 3.0+1.0 Thrice Upon a Time")
+            cy.get(".title-container").contains("Dilwale Dulhania Le Jayenge")
+            cy.get(".title-container").contains("Evangelion: 3.0+1.0 Thrice Upon a Time")
             cy.get(".Genres").contains("Comedy")
         })
 
