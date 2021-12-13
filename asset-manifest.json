@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/movie-db/static/css/main.74458c61.chunk.css",
-    "main.js": "/movie-db/static/js/main.3c6c2d4f.chunk.js",
-    "main.js.map": "/movie-db/static/js/main.3c6c2d4f.chunk.js.map",
+    "main.css": "/movie-db/static/css/main.4d4a10b2.chunk.css",
+    "main.js": "/movie-db/static/js/main.b9772382.chunk.js",
+    "main.js.map": "/movie-db/static/js/main.b9772382.chunk.js.map",
     "runtime-main.js": "/movie-db/static/js/runtime-main.4e9c9a39.js",
     "runtime-main.js.map": "/movie-db/static/js/runtime-main.4e9c9a39.js.map",
     "static/js/2.621f2186.chunk.js": "/movie-db/static/js/2.621f2186.chunk.js",
     "static/js/2.621f2186.chunk.js.map": "/movie-db/static/js/2.621f2186.chunk.js.map",
     "index.html": "/movie-db/index.html",
-    "static/css/main.74458c61.chunk.css.map": "/movie-db/static/css/main.74458c61.chunk.css.map",
+    "static/css/main.4d4a10b2.chunk.css.map": "/movie-db/static/css/main.4d4a10b2.chunk.css.map",
     "static/js/2.621f2186.chunk.js.LICENSE.txt": "/movie-db/static/js/2.621f2186.chunk.js.LICENSE.txt",
     "static/media/index.css": "/movie-db/static/media/undeveloped.book-regular.61e2f85f.ttf",
     "static/media/FallBackPic.css": "/movie-db/static/media/popcorn.a69b3f7f.png"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.4e9c9a39.js",
     "static/js/2.621f2186.chunk.js",
-    "static/css/main.74458c61.chunk.css",
-    "static/js/main.3c6c2d4f.chunk.js"
+    "static/css/main.4d4a10b2.chunk.css",
+    "static/js/main.b9772382.chunk.js"
   ]
 }
