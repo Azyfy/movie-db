@@ -63,6 +63,12 @@
     color: white;
 }
 
+.s-genre {
+    border-bottom: 1px dotted white;
+    font-size: small;
+    margin: 10px;
+}
+
 @media screen and (min-width: 768px) { 
 
     .titles-container {

@@ -10,7 +10,7 @@ const Genres = ({ titleGenres, genres }: { titleGenres: number[]; genres: genre[
             {
                 filteredGenre.map( (genre) => {
                     return (
-                        <span key={ genre.id } > { genre.name } </span>
+                        <span key={ genre.id } className="s-genre" > { genre.name } </span>
                     )
                 })
             }
