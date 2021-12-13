@@ -46,7 +46,7 @@ const SingleTitle = ({ type }: { type:string }) => {
 
     return (
         <div className="SingleTitle" >
-            <button id="back-btn" onClick={ () => navigate(-1) } > Back </button>
+            <button id="back-btn" onClick={ () => navigate(-1) } > <span> { "<" } </span> </button>
             <Title title={ title } />
         </div>
     )
