@@ -7,15 +7,15 @@ import Search from "./Search"
 
 const NavMenu = () => {
     const location = useLocation()
-    const [navPath, setNahPath] = useState( (location.pathname.slice(1, 6) === "top-m" ) ?
+    const [navPath, setNahPath] = useState( (location.pathname.slice(1, 6) === "movie" ) ?
                                                 "movie" : "tv" )
 
     const handleClick = (value: string) => {
         setNahPath(value)
     }
 
-    if(( location.pathname !== "/top-movies" && location.pathname !== "/top-movies/")
-        && ( location.pathname !== "/top-shows" && location.pathname !== "/top-shows/" )) {
+    if(( location.pathname !== "/movies" && location.pathname !== "/movies/")
+        && ( location.pathname !== "/shows" && location.pathname !== "/shows/" )) {
         return null
     }
 
@@ -23,8 +23,8 @@ const NavMenu = () => {
         <div className="NavMenu" >
 
             <nav className="nav" >
-                <Link to="/top-movies" onClick={ () => handleClick("movie") }  > Movies </Link>
-                <Link to="/top-shows" onClick={ () => handleClick("tv") }  > TV Shows </Link>
+                <Link to="/movies" onClick={ () => handleClick("movie") }  > Movies </Link>
+                <Link to="/shows" onClick={ () => handleClick("tv") }  > TV Shows </Link>
             </nav>
 
             <Search type={navPath} />
