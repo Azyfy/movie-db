@@ -26,9 +26,9 @@ describe("MovieDB", () => {
     describe("Page use", () => {
 
         it("navigates the page", () => {
-            cy.url().should('include', 'top-shows')
+            cy.url().should('include', 'shows')
             cy.get(".nav > a").first().contains("Movies").click()
-            cy.url().should('include', 'top-movies')
+            cy.url().should('include', 'movies')
             cy.get("h2").contains("Movies")
             cy.get(".title-container").should('have.length', 10)
             cy.get(".nav > a").last().contains("TV Shows").click()
