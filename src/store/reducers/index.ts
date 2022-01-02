@@ -1,11 +1,11 @@
 import { getTopRated, getGenres, getSearchedTitle } from "../../services/moviedb"
-import { state, genre, movieTitles, showTitles } from "../../types"
+import { state, action, genre, movieTitles, showTitles } from "../../types"
 
 const initialState = {
   searchTerm: ""
 }
 
-const reducer = ( state: state = initialState, action: { type: string; data: any}) => {
+const reducer = ( state: state = initialState, action: action) => {
   switch (action.type) {
     case "INITIALIZE_TOP_RATED": {
       const topRated = action.data
@@ -68,7 +68,7 @@ const handleError = (message: string) => {
 }
 
 export const initializeTopRated = () => {
-  return async (dispatch: (arg0: { type: string; data: { topMovies: [movieTitles]; topShows: [showTitles] } | string | undefined }) => void) => {
+  return async (dispatch: (arg0: { type: string; data: { topMovies: movieTitles[]; topShows: showTitles[] } | string | undefined }) => void) => {
 
     try {
       const topRated = await getTopRated()
@@ -77,7 +77,7 @@ export const initializeTopRated = () => {
         type: "INITIALIZE_TOP_RATED",
         data: topRated
       })
-    }
+    }// eslint-disable-next-line @typescript-eslint/no-explicit-any
     catch (err: any) {
       dispatch(handleError(err.message))
     }
@@ -86,7 +86,7 @@ export const initializeTopRated = () => {
 }
 
 export const initializeGenres = () => {
-  return async (dispatch: (arg0: { type: string; data: { movieGenres: [genre]; showGenres: [genre] } | string | undefined }) => void) => {
+  return async (dispatch: (arg0: { type: string; data: { movieGenres: genre[]; showGenres: genre[] } | string | undefined }) => void) => {
 
     try {
       const genres = await getGenres()
@@ -94,7 +94,7 @@ export const initializeGenres = () => {
         type: "INITIALIZE_GENRES",
         data: genres
       })
-    }
+    }// eslint-disable-next-line @typescript-eslint/no-explicit-any
     catch (err: any) {
       dispatch(handleError(err.message))
     }
@@ -103,7 +103,7 @@ export const initializeGenres = () => {
 }
 
 export const initializeSearchResults = (type:string, searchTerm: string) => {
-  return async (dispatch: (arg0: { type: string; data: [movieTitles | showTitles] | string| undefined }) => void) => {
+  return async (dispatch: (arg0: { type: string; data: movieTitles[] | showTitles[] | string | undefined }) => void) => {
 
     try {
       const searchResults = await getSearchedTitle(type, searchTerm)
@@ -111,7 +111,7 @@ export const initializeSearchResults = (type:string, searchTerm: string) => {
         type: "INITIALIZE_SEARCH_RESULTS",
         data: searchResults
       })
-    }
+    }// eslint-disable-next-line @typescript-eslint/no-explicit-any
     catch (err: any) {
       dispatch(handleError(err.message))
     }

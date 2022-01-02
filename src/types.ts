@@ -1,6 +1,6 @@
 interface baseTitles {
     id: number
-    genre_ids: [number]
+    genre_ids: number[]
     backdrop_path: string
     poster_path: string
     popularity: number
@@ -21,7 +21,7 @@ export interface showTitles extends baseTitles {
   }
 
 export interface videos {
-    results: [video]
+    results: video[]
 }
 
 interface video {
@@ -43,8 +43,8 @@ export interface singleShowTitle extends showTitles {
 }
 
 export interface topRated {
-    topMovies: [movieTitles]
-    topShows: [showTitles]
+    topMovies: movieTitles[]
+    topShows: showTitles[]
 }
 
 export interface genre {
@@ -53,21 +53,47 @@ export interface genre {
 }
 
 export interface genres {
-    movieGenres: [genre]
-    showGenres: [genre]
+    movieGenres: genre[]
+    showGenres: genre[]
 }
 
 export interface state {
     topRated?: topRated
     genres?: genres
-    searchResults?: [movieTitles | showTitles] | null
+    searchResults?: movieTitles[] | showTitles[] | null
     errorMessage?: string
     searchTerm: string
 }
 
 export interface titlesProps {
-    titles: [showTitles] | [movieTitles]
-    genres: [genre]
+    titles: showTitles[] | movieTitles[]
+    genres: genre[]
     currentPath: string
     heading: string
 }
+
+export type action =
+  | {
+      type: "INITIALIZE_TOP_RATED"
+      data: topRated
+    }
+  | {
+      type: "INITIALIZE_GENRES"
+      data: genre[]
+    }
+  | {
+    type: "INITIALIZE_SEARCH_RESULTS"
+    data: [movieTitles | showTitles]
+  }
+  | {
+    type: "CLEAR_SEARCH_RESULTS"
+    data: null
+  }
+  | {
+    type: "SET_SEARCH_TERM"
+    data: string
+  }
+  | {
+    type: "ERROR"
+    data: string
+  }

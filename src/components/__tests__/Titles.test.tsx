@@ -7,8 +7,11 @@ import {
     Route
   } from "react-router-dom"
 
+import { genre } from "../../types"
+
 describe("Titles component", () => {
     test("Titles component renders movie or tv show titles", () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const titles: any = [
             {
             "backdrop_path": "/5hNcsnMkwU2LknLoru73c76el3z.jpg",
@@ -45,7 +48,7 @@ describe("Titles component", () => {
         ]
         const heading = "Movies Test"
         const currentPath= "/top-movies"
-        const genres: any = [ { id: 0, name: "TEST" } ]
+        const genres: genre[] = [ { id: 0, name: "TEST" } ]
         const component = render(
             <Router>
                 <Routes>
@@ -61,10 +64,11 @@ describe("Titles component", () => {
     })
 
     test("Titles component renders no results message on empty array", () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const titles: any = [ ]
         const heading = "Movies Test"
         const currentPath= "/top-movies"
-        const genres: any = [ { id: 0, name: "TEST" } ]
+        const genres: genre[] = [ { id: 0, name: "TEST" } ]
         const component = render(
             <Router>
                 <Routes>

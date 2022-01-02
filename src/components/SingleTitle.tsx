@@ -26,7 +26,7 @@ const SingleTitle = ({ type }: { type:string }) => {
             try {
                 const singleTitle = await getTitle(id, type)
                 setTitle(singleTitle)
-            }
+            }// eslint-disable-next-line @typescript-eslint/no-explicit-any
             catch (err: any) {
                 dispatch(dispatchError(err.message))
             }

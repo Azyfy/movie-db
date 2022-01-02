@@ -5,7 +5,7 @@ import Title from "../Title"
 describe("Title component", () => {
 
     test("Title component renders data of movie object", () => {
-
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const title: any = {
             "backdrop_path": "/5hNcsnMkwU2LknLoru73c76el3z.jpg",
             "genre_ids": [
@@ -33,7 +33,7 @@ describe("Title component", () => {
     })
 
     test("Title component renders data of show object", () => {
-
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const title: any = {
             "backdrop_path": "/7q448EVOnuE3gVAx24krzO7SNXM.jpg",
             "first_air_date": "2021-09-03",

@@ -25,7 +25,7 @@ import { state } from "./types"
 function App() {
   const topRated = useSelector( (state:state) => state.topRated)
   const genres = useSelector( (state:state) => state.genres)
-  const currentSearchResults: any = useSelector( (state:state) => state.searchResults)
+  const currentSearchResults = useSelector( (state:state) => state.searchResults)
   const errorMessage = useSelector( (state:state) => state.errorMessage)
   const dispatch = useDispatch()
 
