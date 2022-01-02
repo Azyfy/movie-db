@@ -47,7 +47,7 @@ describe("Titles component", () => {
             }
         ]
         const heading = "Movies Test"
-        const currentPath= "/top-movies"
+        const currentPath= "/movies"
         const genres: genre[] = [ { id: 0, name: "TEST" } ]
         const component = render(
             <Router>
@@ -67,7 +67,7 @@ describe("Titles component", () => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const titles: any = [ ]
         const heading = "Movies Test"
-        const currentPath= "/top-movies"
+        const currentPath= "/movies"
         const genres: genre[] = [ { id: 0, name: "TEST" } ]
         const component = render(
             <Router>
