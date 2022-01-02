@@ -4,8 +4,8 @@ import { state, action, genre, movieTitles, showTitles } from "../../types"
 const initialState = {
   searchTerm: ""
 }
-
-const reducer = ( state: state = initialState, action: action) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const reducer = ( state: state = initialState, action: action): any => {
   switch (action.type) {
     case "INITIALIZE_TOP_RATED": {
       const topRated = action.data
