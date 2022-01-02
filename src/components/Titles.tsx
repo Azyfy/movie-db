@@ -23,7 +23,7 @@ const Titles = ( props: titlesProps  ) => {
                 <h2 className="secondary-title font-face-mfstrip" > { props.heading } </h2>
                 <div className="titles-container" >
                     {
-                        props?.titles?.map( (title) => {
+                        props.titles.map( (title) => {
                             return(
                                     <div className="title-container" key={ title.id }  >
                                         <Link to={`${props.currentPath}/${title.id}`} key={ title.id } >
