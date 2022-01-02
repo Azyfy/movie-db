@@ -83,7 +83,7 @@ export type action =
     }
   | {
     type: "INITIALIZE_SEARCH_RESULTS"
-    data: [movieTitles | showTitles]
+    data: movieTitles[] | showTitles[]
   }
   | {
     type: "CLEAR_SEARCH_RESULTS"
