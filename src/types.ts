@@ -79,7 +79,7 @@ export type action =
     }
   | {
       type: "INITIALIZE_GENRES"
-      data: genre[]
+      data: genres
     }
   | {
     type: "INITIALIZE_SEARCH_RESULTS"
