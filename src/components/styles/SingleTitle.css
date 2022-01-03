@@ -13,6 +13,12 @@
     margin-top: 10px;
     margin-bottom: 25px;
     padding: 5px 0;
+    transition: transform 1s;
+}
+
+#back-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1)
 }
 
 @media screen and (min-width: 768px)  {  
@@ -25,11 +31,9 @@
         align-self: flex-start;
         margin-left: 50px;
         transform: rotate(0deg);
-        transition: transform 1s;
     }
 
     #back-btn:hover {
         transform: rotate(360deg);
-        cursor: pointer;
     }
 }
