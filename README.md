@@ -65,4 +65,4 @@ The usual; clone the repo and install the dependencies (`npm install`)
 
 #### gh-pages deploy instructions
 The deploy script is set for deploying to gh-pages using the gh-pages dev dep. If you want to deploy the app to gh-pages add
-`"https://<your_github_username>.github.io/<repo_name>"` as `"homepage"` in your package.json and in `App.tsx` file, in `<Router />` add `basename="<repo_name>"` (ex. `<Router basename="<repo_name>" />"`
+`"https://<your_github_username>.github.io/<repo_name>"` as `"homepage"` in your `package.json` and in `App.tsx` file, in `<Router />` add `basename="<repo_name>"` (ex. `<Router basename="<repo_name>" />"`)
