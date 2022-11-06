@@ -17,7 +17,7 @@ A responsive movie DB app, bootstrapped with Create React App, displaying the to
 ## Overview
 
 ### Links
-- [Live](https://azzryel.github.io/movie-db)
+- [Live](https://azyfy.github.io/movie-db)
 
 ### Features
 - When app loads, the TV SHOWS tab is selected.
